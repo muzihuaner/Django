@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>介绍Flask</title>
+    <link rel="stylesheet" href="/static/flask/style.css">
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<header>
+    <h1>Flask—轻量级的Web框架</h1>
+    <nav>
+        <ul>
+            <li><a href="#overview">概述</a></li>
+            <li><a href="#features">特点</a></li>
+            <li><a href="#resources">资源</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="overview">
+        <h2>概述</h2>
+        <img src="/static/flask/imgs/flask-logo.webp" alt="" srcset="" width="200px">
+        <p>
+            Flask是一种基于Python编程语言开发的Web框架。它被设计成简单、灵活，易于学习和使用，适用于小型应用程序的高效开发。</p>
+    </section>
+    <section id="features">
+        <h2>特点</h2>
+        <ul>
+            <li>强大的插件系统</li>
+            <li>提供常用的Web开发功能</li>
+            <li>易于扩展和定制</li>
+            <li>支持多种数据库</li>
+            <li>社区活跃，拥有众多优秀的扩展和库</li>
+        </ul>
+    </section>
+    <section id="resources">
+        <h2>资源</h2>
+        <ul>
+            <li><a href="https://flask.palletsprojects.com/">官方网站</a></li>
+            <li><a href="https://github.com/pallets/flask">Github仓库</a></li>
+            <li><a href="https://www.youtube.com/watch?v=MwZwr5Tvyxo">Flask Mega-Tutorial视频教程</a></li>
+        </ul>
+    </section>
+</main>
+<footer>
+    <p>版权所有 &copy; 2023 欢哥科技</p>
+</footer>
+<script>
+    /* 平滑滚动到标签 */
+    function scrollToTag(tag) {
+        document.querySelector(tag).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    /* 监听导航链接点击事件 */
+    document.querySelectorAll('header nav ul li a').forEach(item => {
+        item.addEventListener('click', event => {
+            event.preventDefault();
+            scrollToTag(item.getAttribute('href'));
+        });
+    });
+
+</script>
+</body>
+</html>
