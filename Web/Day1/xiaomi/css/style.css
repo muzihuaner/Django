@@ -207,3 +207,6 @@ img {
     height: 24px;
     margin: 0 auto 4px;
 }
+.news .channel .item a:hover{
+    opacity: 1;
+}
