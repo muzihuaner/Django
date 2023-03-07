@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+}
+
+body {
+    color: #333;
+    background-color: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    min-width: 1226px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.topbar-nav {
+
+    background: #333;
+    color: #b0b0b0;
+}
+
+.topbar-nav a {
+    color: #b0b0b0;
+    line-height: 40px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    padding: 0 5px;
+}
+
+.topbar-nav a:hover {
+    color: #fff;
+}
+
+.toplinks {
+
+    float: left;
+}
+
+.toplinks2 {
+    float: right;
+
+}
+
+.toplinks2 a span.shopcar {
+    text-align: center;
+}
+
+.toplinks2 a span.shopcar svg {
+    width: 20px;
+    height: 20px;
+    padding-right: 4px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1226px;
+}
+
+.site-header-bar {
+
+}
+
+.header-logo {
+    display: flex;
+    float: left;
+    /*border: 1px solid #333;*/
+    width: 234px;
+    height: 100px;
+}
+
+.header-logo .logo {
+    position: relative;
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+    /*overflow: hidden;*/
+    margin-top: 22px;
+}
+
+.header-logo a.logo {
+    background-image: url("https://cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/img/logo-mi2.png");
+    background-size: 56px;
+    background-repeat: no-repeat;
+}
+
+.header-logo p {
+    display: inline-block;
+    line-height: 100px;
+    font-size: 24px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.header-nav {
+    float: left;
+    /*border: 1px solid #333;*/
+    line-height: 100px;
+}
+
+/*行内标签：默认设置高度，边距无效->变成块级元素或行内+块级 display: inline-block; */
+.header-nav a {
+    display: inline-block;
+    padding: 0 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+.header-nav a:hover {
+    color: #ff6700;
+}
+
+.header-search {
+    line-height: 100px;
+    float: right;
+    /*border: 1px solid #333;*/
+}
+
+.searchbox {
+    display: flex;
+    float: right;
+    width: 296px;
+    height: 50px;
+    z-index: 20;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.searchbox input.header-search-text {
+    width: 245px;
+    border: 1px solid #e0e0e0;
+
+}
+
+.header-search-so {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    border-left:none;
+}
+
+.header-search a svg {
+    width: 20px;
+    height: 20px;
+}
