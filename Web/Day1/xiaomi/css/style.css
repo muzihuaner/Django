@@ -182,18 +182,21 @@ img {
     height: 170px;
     margin-left: 14px;
 }
+
 .news .list-item img {
     width: 316px;
     height: 170px;
 }
-.news .channel .item{
+
+.news .channel .item {
     float: left;
     height: 82px;
     width: 72px;
     /*border: 1px solid #cccccc;*/
     text-align: center;
 }
-.news .channel .item a{
+
+.news .channel .item a {
     display: inline-block;
     font-size: 12px;
     color: #fff;
@@ -201,12 +204,64 @@ img {
     /*透明度*/
     opacity: 0.7;
 }
+
 .news .channel .item a img {
     display: block;
     width: 24px;
     height: 24px;
     margin: 0 auto 4px;
 }
-.news .channel .item a:hover{
+
+.news .channel .item a:hover {
     opacity: 1;
+}
+
+.down-app-btn {
+    position: relative;
+}
+
+#down-img {
+    display: none;
+    width: 124px;
+    height: 148px;
+    background-color: #ffffff;
+    text-align: center;
+    z-index: 99999;
+    position: absolute;
+    left: -33px;
+    /*border: 1px solid #807d7d;*/
+    box-shadow: 1px 1px 1px #807d7d;
+    color: #333333;
+}
+
+#down-img img {
+    margin-top: 10px;
+    /*margin-left:10px ;*/
+    /*margin-right: 10px;*/
+    width: 90px;
+    height: 90px;
+}
+
+a.down-app-btn:hover #down-img {
+    display: block;
+}
+
+.back {
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+    width: 25px;
+    height: 25px;
+    background-color: #ff6700;
+    border: 1px solid #d0cbcb;
+    border-radius: 5px;
+    text-align: center;
+    color: #eeeeee;
+    font-size: larger;
+}
+
+.back a {
+    color: #eeeeee;
+    text-align: center;
+    padding-top: 10px;
 }
