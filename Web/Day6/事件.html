@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.quickso.cn/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li id="baidu">baidu</li>
+      <li>google</li>
+      <li>sougou</li>
+    </ul>
+    <script>
+      $(function () {
+        //当页面框架加载完成之后执行
+        $("li").click(function () {
+          // 当单击li标签时，会执行函数。
+          // $(this) 当前你点击的是哪个标签。
+          var text = $(this).text();
+          console.log(text);
+          $(this).remove();
+        });
+      });
+    </script>
+  </body>
+</html>

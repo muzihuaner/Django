@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<ul id="city">
+
+</ul>
+<script !src="">
+    let cityList = ["北京", "上海", "广州", "重庆"]
+    for (let city in cityList) {
+        let cityname = cityList[city]
+        //将文本添加
+        const tag = document.createElement("li");
+        tag.innerHTML = cityname
+        //添加到ul里
+        const list = document.getElementById("city");
+        list.appendChild(tag)
+
+    }
+
+</script>
 </body>
 </html>

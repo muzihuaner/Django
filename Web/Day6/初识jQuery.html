@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.quickso.cn/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1 id="txt">中国联通</h1>
+    <h1 class="c1">中国联通</h1>
+    <input type="text" name="id0" id="" />
+    <input type="text" name="id1" id="" />
+    <div>
+      <div>
+        <div>bj</div>
+        <div id="c1">
+          <div>1</div>
+          <div class="p10">2</div>
+          <div>3</div>
+        </div>
+        <div>cq</div>
+        <div>gz</div>
+      </div>
+
+      <div>
+        <div>sx</div>
+        <div>shx</div>
+        <div>hb</div>
+        <div>sd</div>
+      </div>
+    </div>
+    <script>
+      // 利用jQuery实现功能
+      //找到id为txt的tag并修改文字
+      $("#txt").text("中国移动");
+      $(".c1").text("中国电信");
+      $("h1");
+      $(".nav ul li a");
+      $("#c1,.c2,li");
+      $("input[name='id0']");
+
+      $("#c1").prev(); //bj上一个
+      $("#c1"); //sh
+      $("#c1").next(); //cq 下一个
+      $("#c1").next().next(); //gz 下下个
+
+      $("#c1").siblings(); //bj,cq,gz  找到所有兄弟
+
+      $("#c1").parent(); //父亲
+      $("#c1").parent().parent(); //爷爷
+      $("#c1").children(); //所有的儿子
+      $("#c1").children(".p10"); //所有儿子中寻找class为p10的标签
+      $("#c1").find(".p10"); //在所有子孙中寻找
+    </script>
+  </body>
+</html>

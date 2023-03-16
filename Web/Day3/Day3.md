@@ -79,4 +79,6 @@ Bootstrap 需要为页面内容和栅格系统包裹一个 `.container` 容器�
 </div>
 ```
 
-### 6.
+### 6.图标
+
+https://fontawesome.dashgame.com/

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .menu {
+        width: 200px;
+        height: 800px;
+        border: 1px solid red;
+      }
+      .menu .header {
+        background-color: gold;
+        padding: 10px 5px;
+        border-bottom: 1px dotted #dddddd;
+        cursor: pointer;
+        /* cursor CSS 属性设置光标的类型（如果有），在鼠标指针悬停在元素上时显示相应样式。 */
+      }
+      .menu .content a {
+        display: block;
+        padding: 5px 5px;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px dotted #dddddd;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+    <script src="https://cdnjs.quickso.cn/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="item">
+        <div class="header" onclick="clickMe(this)">免费服务</div>
+        <div class="content hide">
+          <a href="">免费CDN</a>
+          <a href="">免费域名</a>
+          <a href="">免费服务器</a>
+          <a href="">免费模版</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="header" onclick="clickMe(this)">付费服务</div>
+        <div class="content hide">
+          <a href="">CDN</a>
+          <a href="">域名</a>
+          <a href="">服务器</a>
+          <a href="">模版</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="header" onclick="clickMe(this)">免费服务2</div>
+        <div class="content hide">
+          <a href="">免费CDN</a>
+          <a href="">免费域名</a>
+          <a href="">免费服务器</a>
+          <a href="">免费模版</a>
+        </div>
+      </div>
+      <div class="item">
+        <div class="header" onclick="clickMe(this)">付费服务2</div>
+        <div class="content hide">
+          <a href="">CDN</a>
+          <a href="">域名</a>
+          <a href="">服务器</a>
+          <a href="">模版</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      function clickMe(self) {
+        // $(self) ->当前单击的标签
+        // 判断有没有 .hasClass(）
+        // 删除样式 $(self).next().removeClass()
+        // 添加 .addClass(）
+        // 
+        //让自己下面的功能展示出来
+        $(self).next().removeClass("hide");
+        // 找父亲，父亲的所有兄弟，在去每个兄弟的子孙中寻找 class=content，添加hide
+        $(self).parent().siblings().find(".content").addClass("hide");
+
+        // var hasHide = $(self).next().hasClass("hide");
+        // if (hasHide) {
+          
+        // } else {
+        //   $(self).next().addClass("hide");
+        // }
+      }
+    </script>
+  </body>
+</html>

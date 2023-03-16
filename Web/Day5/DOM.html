@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" placeholder="请输入内容" id="myinput" />
+    <input type="button" value="单击添加" onclick="add()" />
+    <ul id="city"></ul>
+    <script>
+      function add() {
+        // 获取输入框内容
+        var text = document.getElementById("myinput");
+        // 获取用户输入内容
+        var newString = text.value;
+        // 判断是否为空
+        if (newString.length > 0) {
+          var newTag = document.createElement("li");
+          newTag.innerText = newString;
+          var parentTag = document.getElementById("city");
+          parentTag.appendChild(newTag);
+          //将输入框清空
+          text.value = "";
+        } else {
+          alert("输入框不能为空");
+        }
+      }
+
+
+     
+
+    </script>
+  </body>
+</html>

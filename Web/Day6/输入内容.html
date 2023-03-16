@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.quickso.cn/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <input type="text" id="txtUser" placeholder="用户名" />
+    <input type="email" id="txtEmail" placeholder="邮箱" />
+    <input type="button" value="提交" onclick="getInfo()" />
+
+    <ul id="view">
+      <li>Info</li>
+    </ul>
+
+    <script>
+      function getInfo() {
+        //获取用户输入内容
+        var userName = $("#txtUser").val();
+        var userEmail = $("#txtEmail").val();
+        var DataString = userName + "-" + userEmail;
+        // 创建li，写入内容
+        var newLi = $("<li>").text(DataString);
+        $("#view").append(newLi);
+      }
+    </script>
+  </body>
+</html>

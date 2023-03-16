@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.quickso.cn/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Do</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>xiaohuan</td>
+                <td>
+                    <input type="button" value="Delete" class="Delete">
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>xiaohuan</td>
+                <td>
+                    <input type="button" value="Delete" class="Delete">
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>xiaohuan</td>
+                <td>
+                    <input type="button" value="Delete" class="Delete">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        $(function(){
+            $(".Delete").click(function () {
+                // 删除当前行的数据
+                $(this).parent().parent().remove()
+            })
+        })
+        
+    </script>
+</body>
+</html>
