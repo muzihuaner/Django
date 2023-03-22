@@ -34,7 +34,6 @@ create table admin(
 )default charset=utf8;
 ```
 
-
 ### 使用Python操作数据库
 
 ```
@@ -115,7 +114,6 @@ cursor.close()
 conn.close()
 ```
 
-
 ```python
 # 1.连接数据库
 import pymysql
@@ -168,3 +166,15 @@ conn.commit()
 cursor.close()
 conn.close()
 ```
+
+注意：
+
+* 在进行 新增、删除、修改时一定记得commit，不然数据库不会更新数据
+
+```python
+cursor.execute("SQL语句")
+conn.commit()
+```
+
+* 在查询时不需要commit，但是需要执行fetchall或者fetchone
+* 对于SQL语句不要用Python的字符串格式化进行拼接，一定要用execute()

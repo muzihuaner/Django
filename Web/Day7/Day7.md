@@ -63,7 +63,7 @@ https://bootstrap-datepicker.readthedocs.io/en/latest/
                         <div class="col-sm-10">
                             <input type="text" id="dt" class="form-control">
                         </div>
-                  
+              
                     </div>
                 </div>
             </div>
@@ -132,7 +132,6 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 export PATH=${PATH}:/usr/local/mysql/bin
 
-
 **保存，重新打开终端，这时候mysql的命令 *已经可以使用了* **
 
 **（输入mysql -u root -p试一下）。**
@@ -169,7 +168,8 @@ https://blog.csdn.net/qixizhuang/article/details/82962121
 
 ### MYSQL指令
 
- MYSQL和我们平时认知的不同概念
+MYSQL和我们平时认知的不同概念
+
 
 | MYSQL  | 认知   |
 | ------ | ------ |
@@ -466,8 +466,6 @@ INSERT INTO users(name,password,email,age,salary,ctime) VALUES("小欢","passwor
 id	name	password	email	age	salary	ctime
 1	小欢	password	xiaohuan@qq.com	23	12500.00	2023-03-17 17:03:00
 ```
-
-
 
 平时开发系统时，一般情况下:
 

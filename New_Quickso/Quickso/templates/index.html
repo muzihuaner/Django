@@ -1,0 +1,1609 @@
+{% load static %}
+<!--
+ *你可能会认为你读得懂以下的代码。但是你不会懂的，相信我吧。
+ * 要是你尝试玩弄这段代码的话，你将会在无尽的通宵中不断地咒骂自己为什么会认为自己聪明到可以优化这段代码。
+ * 现在请关闭这个文件去玩点别的吧!
+
+
+ * ░░░░░░░░░░░░░░░░░░░░░░░░▄░░
+ * ░░░░░░░░░▐█░░░░░░░░░░░▄▀▒▌░
+ * ░░░░░░░░▐▀▒█░░░░░░░░▄▀▒▒▒▐
+ * ░░░░░░░▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐
+ * ░░░░░▄▄▀▒░▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐
+ * ░░░▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌
+ * ░░▐▒▒▒▄▄▒▒▒▒░░░▒▒▒▒▒▒▒▀▄▒▒
+ * ░░▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐
+ * ░▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄
+ * ░▌░▒▄██▄▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒
+ * ▀▒▀▐▄█▄█▌▄░▀▒▒░░░░░░░░░░▒▒▒
+ * 单身狗就这样默默地看着你，一句话也不说
+ -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="full-screen" content="yes"/>
+    <!--UC强制全屏-->
+    <meta name="browsermode" content="application"/>
+    <!--UC应用模式-->
+    <meta name="x5-fullscreen" content="true"/>
+    <!--QQ强制全屏-->
+    <meta name="x5-page-mode" content="app"/>
+    <!--QQ应用模式-->
+    <title data-n-head="true">快点搜-搜索，快一点！-欢哥科技</title>
+    <meta data-n-head="true" charset="utf-8">
+    <link rel="shortcut icon" href="{% static 'imgs/favicon.ico'%}" type="image/x-icon"/>
+    <meta data-n-head="true" data-hid="keywords" name="keywords"
+          content="搜索,网址导航,上网导航,网址大全,快点搜,快搜,在线视频,免费,欢哥科技,资源搜索">
+    <meta data-n-head="true" data-hid="description" name="description" itemprop="description"
+          content="【快点搜】搜索，快一点！简单、好用、全面的网站导航">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    <!-- 图片js-->
+    <!--<link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/viewerjs@1.10.2/dist/viewer.css">-->
+    <!--<script src="https://gcore.jsdelivr.net/npm/viewerjs@1.10.2/dist/viewer.min.js"></script>-->
+
+    <script type="text/javascript" src="{% static 'js/script.js'%}"></script>
+    <link rel='stylesheet' id='nav-css' href="{% static 'css/nav.css'%}" type='text/css' media='all'/>
+
+    <!--字体图标库-->
+    <link href="https://cdnjs.quickso.cn/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--[if lte IE 8]>
+    <script>window.location.href = "https://support.dmeng.net/upgrade-your-browser.html?referrer=" + encodeURIComponent(window.location.href);</script>
+    <![endif]-->
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <!--自动切换夜间
+        <script>
+            window.setInterval(function() {
+              var refreshHours = new Date().getHours();
+              if ((new Date().getHours() >= 19 || new Date().getHours() < 7)) {
+                // 指定时间执行
+                document.getElementById('day').classList.add('dark')
+              }
+            }, 1000);
+          </script>-->
+    <!--百度统计-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ab1c678ad3114b19b7a5311a95c823c9";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!--51la新统计-->
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>
+        LA.init({
+            id: 'JE7dtmuVBJ9XAH05'
+        })
+    </script>
+    <!--腾讯跳转-->
+    <script>
+        // 跳转提示
+        if (is_weixn_qq()) {
+            ;
+            window.location.href = 'https://c.pc.qq.com/middle.html?pfurl=https://quickso.cn';
+
+        }
+
+        // 判断QQUA的代码无需修改
+        function is_weixn_qq() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return "weixin";
+            } else if (ua.match(/QQ/i) == "qq") {
+                return "QQ";
+            }
+            return false;
+        }
+    </script>
+    <!--网站变灰
+        <style type="text/css">
+html {
+filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+-webkit-filter: grayscale(100%);}
+</style>-->
+    <!--灯笼css-->
+    <!--<link rel="stylesheet" type="text/css" href="https://gcore.jsdelivr.net/gh/muzihuaner/deng@main/deng.css">-->
+
+</head>
+
+<body data-n-head="" y id="day" class="{if GetVars('dark','欢哥科技') } dark{/if}">
+
+<div class="index_page">
+    <!--<div class="bgimg" style="background-image: url(https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/202207262130495.png);background-repeat: repeat;"></div>-->
+    <!--<div class="bgimg" style="background-image: linear-gradient(90deg, rgba(60, 10, 30, .04) 3%, transparent 0), linear-gradient(1turn, rgba(60, 10, 30, .04) 3%, transparent 0);background-size: 20px 20px;background-position: 50%;background-repeat: repeat;"></div>-->
+    <div class="bgimg" style="background-image: url(/); filter: blur(4px); opacity: 0.5;"></div>
+    <main>
+        <div class="navbar">
+
+            <!--大Banner
+                <div class="dzq-index__active" id="phonehide">
+  <div class="dzq-layout__box" onclick="window.open('https://pt.quickso.cn/')">
+    <img
+      src="data:image/png;base64,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"
+    />
+    快点PT已全新上线啦！，快来分享你的种子～，欢迎来玩～ 点击立即查看！！
+  </div>
+</div>-->
+            <style>
+                .dzq-index__active {
+                    background: #006eff;
+                    font-size: 14px;
+                    color: #fff;
+                    line-height: 65px;
+                    height: 65px;
+                    width: 500px;
+                    border-radius: 0px 0px 8px 8px;
+                }
+
+                .dzq-index__active > .dzq-layout__box {
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .dzq-layout__box {
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
+
+                .dzq-index__active > .dzq-layout__box > img {
+                    width: 30px;
+                    height: 26px;
+                    position: relative;
+                    display: inline-block;
+                    margin-top: 5px;
+                    margin-right: 15px;
+                    padding-left: 5px;
+                }
+
+                img {
+                    border-style: none;
+                }
+            </style>
+            <!--节日徽标
+                <div  align="center">
+                    <a href="https://www.baidu.com/s?ie=UTF-8&wd=%E5%9B%BD%E5%AE%B6%E5%85%AC%E7%A5%AD%E6%97%A5" target="_blank" >
+                        <img src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/1639359023963.png"  style="display: inline-block; width: 100%; max-width: 100%; height: auto;" >
+                    </a>
+                </div>
+             -->
+            <!-- 灯笼1
+<div class="deng-box">
+<div class="deng">
+    <div class="xian"></div>
+    <div class="deng-a">
+        <div class="deng-b"><div class="deng-t">节</div></div>
+    </div>
+    <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+</div>
+</div> -->
+
+            <!-- 灯笼2
+<div class="deng-box1">
+<div class="deng">
+    <div class="xian"></div>
+    <div class="deng-a">
+        <div class="deng-b"><div class="deng-t">春</div></div>
+    </div>
+    <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+</div>
+</div> -->
+            <header>
+                <h2 class="maintitle" id="maintitle">QuickSo-快点搜</h2>
+            </header>
+        </div>
+        <div class="home view">
+            <div class="search-component">
+                <!-------------------------搜索框---------------------------------->
+                <!--https://www.pianku.li/s/go.php?q=-->
+                <div id="search" class="s-search">
+                    <div id="search-list" class="hide-type-list">
+                        <div class="s-type"><span></span>
+                            <div class="s-type-list animated fadeInUp">
+                                <label for="type-baidu">常用</label>
+                                <label for="type-search">搜索</label>
+                                <label for="type-zhihu">社区</label>
+                                <label for="type-taobao1">生活</label>
+                                <label for="type-baiduxue">工具</label>
+                            </div>
+                        </div>
+                        <div class="search-group group-a"><span class="type-text">常用</span>
+                            <ul class="search-type">
+                                <li>
+                                    <input checked hidden type="radio" name="type" id="type-baidu"
+                                           value="https://www.baidu.com/s?wd="
+                                           data-placeholder="搜索本站(Ctrl+F) & 切换搜索来源 ↑ ">
+                                    <label for="type-baidu"> <span style="color:#0084ff">百度</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-google"
+                                           value="https://www.google.com/search?q="
+                                           data-placeholder="著名404网站，自己想办法访问哦！">
+                                    <label for="type-google"> <span style="color:#3B83FA">G</span> <span
+                                            style="color:#F3442C">o</span> <span style="color:#FFC300">o</span>
+                                        <span style="color:#4696F8">g</span> <span style="color:#2CAB4E">l</span>
+                                        <span style="color:#F54231">e</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-music"
+                                           value="http://tool.liumingye.cn/music/?page=audioPage&type=YQD&name="
+                                           data-placeholder="音乐搜索下载">
+                                    <label for="type-music"> <span style="color:#007daa">音乐</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-dianying"
+                                           value="https://www.cupfox.app/search?key=" data-placeholder="电影搜索">
+                                    <label for="type-dianying"> <span style="color:#f40">影视</span> </label>
+                                </li>
+
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-spjx-1"
+                                           value="http://v.quickso.cn/?url=" data-placeholder="输入视频地址">
+                                    <label for="type-spjx-1"> <span style="color:#388E3C">视频解析</span> </label>
+                                </li>
+                                <!--<li>-->
+                                <!--    <input hidden type="radio" name="type" id="type-快点搜-1"-->
+                                <!--        value="https://quickso.eu.org/search?q="-->
+                                <!--        data-placeholder="无广告，无痕迹。">-->
+                                <!--    <label for="type-快点搜-1"> <span style="color:#2196F3">QuickSo</span> </label>-->
+                                <!--</li>-->
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-欢哥优惠券-1"
+                                           value="https://yhq.quickso.cn/index.php?search_type=tb&input=2&r=l&kw="
+                                           data-placeholder="欢哥优惠券">
+                                    <label for="type-欢哥优惠券-1"> <span style="color:#EF5350">优惠券</span> </label>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="search-group group-b"><span class="type-text">搜索</span>
+                            <ul class="search-type">
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-search"
+                                           value="https://www.baidu.com/s?wd=" data-placeholder="百度一下">
+                                    <label for="type-search"> <span style="color:#0084ff">百度</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-google1"
+                                           value="https://www.google.com/search?q=" data-placeholder="谷歌两下">
+                                    <label for="type-google1"> <span style="color:#3B83FA">G</span> <span
+                                            style="color:#F3442C">o</span> <span style="color:#FFC300">o</span>
+                                        <span style="color:#4696F8">g</span> <span style="color:#2CAB4E">l</span>
+                                        <span style="color:#F54231">e</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-360" value="https://www.so.com/s?q="
+                                           data-placeholder="360好搜">
+                                    <label for="type-360"> <span style="color:#19b955">360</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-sogo"
+                                           value="https://www.sogou.com/web?query=" data-placeholder="搜狗搜索">
+                                    <label for="type-sogo"> <span style="color:#ff5943">搜狗</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-bing"
+                                           value="https://cn.bing.com/search?q=" data-placeholder="微软Bing搜索">
+                                    <label for="type-bing"> <span style="color:#007daa">Bing</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-sm" value="https://quark.sm.cn/s?q="
+                                           data-placeholder="夸克AI搜索">
+                                    <label for="type-sm"> <span style="color:#ff8608">夸克</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-yandex"
+                                           value="https://yandex.com/search/?text=" data-placeholder="俄罗斯搜索引擎">
+                                    <label for="type-yandex"> <span style="color:#DC143C">Yandex</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-toutiao"
+                                           value="https://m.toutiao.com/search?keyword=" data-placeholder="干掉百度？">
+                                    <label for="type-toutiao"> <span style="color:#ce2849">头条</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-fsou"
+                                           value="https://fsoufsou.com/search?q=" data-placeholder="F搜">
+                                    <label for="type-fsou">
+                                        <span style="color:#1976D2">F搜</span>
+                                    </label>
+                                </li>
+
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-duckgo"
+                                           value="https://duckduckgo.com/?q=" data-placeholder="隐私保护，化繁为简。">
+                                    <label for="type-duckgo"> <span style="color:#43ae1f">DuckGo</span> </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="search-group group-d"><span class="type-text">社区</span>
+                            <ul class="search-type">
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-zhihu"
+                                           value="https://www.zhihu.com/search?type=content&q=" data-placeholder="知乎">
+                                    <label for="type-zhihu"> <span style="color:#0084ff">知乎</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-wechat"
+                                           value="http://weixin.sogou.com/weixin?type=2&query=" data-placeholder="微信">
+                                    <label for="type-wechat"> <span style="color:#00a06a">微信</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-weibo"
+                                           value="http://s.weibo.com/weibo/" data-placeholder="微博">
+                                    <label for="type-weibo"> <span style="color:#e6162d">微博</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-douban"
+                                           value="https://www.douban.com/search?q=" data-placeholder="豆瓣">
+                                    <label for="type-douban"> <span style="color:#55a300">豆瓣</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-bilibili"
+                                           value="https://search.bilibili.com/all?keyword=" data-placeholder="哔哩哔哩">
+                                    <label for="type-bilibili"> <span style="color:#ca4286">Bilibili</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-github"
+                                           value="https://github.com/search?q=" data-placeholder="程序员社区">
+                                    <label for="type-github"> <span style="color:#000000">Github</span> </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="search-group group-e"><span class="type-text">生活</span>
+                            <ul class="search-type">
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-taobao1"
+                                           value="https://s.taobao.com/search?q=" data-placeholder="淘宝">
+                                    <label for="type-taobao1"> <span style="color:#f40">淘宝</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-jd"
+                                           value="https://search.jd.com/Search?keyword=" data-placeholder="京东">
+                                    <label for="type-jd"> <span style="color:#c91623">京东</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-xiachufang"
+                                           value="http://www.xiachufang.com/search/?keyword="
+                                           data-placeholder="搜索菜谱、食材">
+                                    <label for="type-xiachufang"> <span style="color:#dd3915">下厨房</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-xiangha"
+                                           value="https://www.tianyancha.com/search?key="
+                                           data-placeholder="请输入公司名称、老板姓名、品牌名称等">
+                                    <label for="type-xiangha"> <span style="color:#930">天眼查</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-快递100"
+                                           value="https://m.kuaidihelp.com/express/queryResult?word="
+                                           data-placeholder="输入快递单号">
+                                    <label for="type-快递100"> <span style="color:#3278e6">查快递</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-qunar"
+                                           value="https://travelsearch.fliggy.com/index.htm?searchType=product&keyword="
+                                           data-placeholder="目的地/酒店/景点/签证等">
+                                    <label for="type-qunar"> <span style="color:#00afc7">飞猪</span> </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="search-group group-f"><span class="type-text">工具</span>
+                            <ul class="search-type">
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-baiduxue"
+                                           value="http://xueshu.baidu.com/s?wd=" data-placeholder="请输入关键字">
+                                    <label for="type-baiduxue"> <span style="color:#689fee">百度学术</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-baidubaike"
+                                           value="https://baike.baidu.com/item/" data-placeholder="请输入词条">
+                                    <label for="type-baidubaike"> <span style="color:#689fee">百度百科</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-apk"
+                                           value="https://sj.qq.com/myapp/search.htm?kw="
+                                           data-placeholder="请输入安卓应用名称">
+                                    <label for="type-apk"> <span style="color:#ff6000">安卓软件</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-exe"
+                                           value="https://pc.qq.com/search.html#!keyword="
+                                           data-placeholder="请输入PC应用名称">
+                                    <label for="type-exe"> <span style="color:#00b38a">PC软件</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-tu"
+                                           value="https://cn.bing.com/images/search?q=" data-placeholder="请输入关键字">
+                                    <label for="type-tu"> <span style="color:#00ff26">图片</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-map"
+                                           value="http://ditu.amap.com/search?query=" data-placeholder="请输入地点">
+                                    <label for="type-map"> <span style="color:#0015ff">地图</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-fanyi"
+                                           value="https://translate.google.cn/#view=home&op=translate&sl=auto&tl=zh-CN&text="
+                                           data-placeholder="请输入词汇或句子">
+                                    <label for="type-fanyi"> <span style="color:#ff0000">翻译</span> </label>
+                                </li>
+                                <li>
+                                    <input hidden type="radio" name="type" id="type-baidukaifa"
+                                           value="https://kaifa.baidu.com/searchPage?wd="
+                                           data-placeholder="请输入开发时遇到的问题">
+                                    <label for="type-baidukaifa"> <span style="color:#130e5a">开发者</span> </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <form action="?s=" method="get" target="_blank" id="super-search-fm">
+                        <input type="text" id="search-text" placeholder="输入关键字搜索" style="outline:0">
+                        <button type="submit"><i class="fa fa-search "></i></button>
+                    </form>
+                    <div class="set-check hidden-xs">
+                        <input type="checkbox" id="set-search-blank" class="bubble-3" autocomplete="off">
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    eval(function (e, t, a, c, i, n) {
+                        if (i = function (e) {
+                            return (e < t ? "" : i(parseInt(e / t))) + (35 < (e %= t) ? String.fromCharCode(e + 29) : e.toString(36))
+                        }, !"".replace(/^/, String)) {
+                            for (; a--;) n[i(a)] = c[a] || i(a);
+                            c = [function (e) {
+                                return n[e]
+                            }], i = function () {
+                                return "\\w+"
+                            }, a = 1
+                        }
+                        for (; a--;) c[a] && (e = e.replace(new RegExp("\\b" + i(a) + "\\b", "g"), c[a]));
+                        return e
+                    }('!2(){2 g(){h(),i(),j(),k()}2 h(){d.9=s()}2 i(){z a=4.8(\'A[B="7"][5="\'+p()+\'"]\');a&&(a.9=!0,l(a))}2 j(){v(u())}2 k(){w(t())}2 l(a){P(z b=0;b<e.O;b++)e[b].I.1c("s-M");a.F.F.F.I.V("s-M")}2 m(a,b){E.H.S("L"+a,b)}2 n(a){6 E.H.Y("L"+a)}2 o(a){f=a.3,v(u()),w(a.3.5),m("7",a.3.5),c.K(),l(a.3)}2 p(){z b=n("7");6 b||a[0].5}2 q(a){m("J",a.3.9?1:-1),x(a.3.9)}2 r(a){6 a.11(),""==c.5?(c.K(),!1):(w(t()+c.5),x(s()),s()?E.U(b.G,+T X):13.Z=b.G,10 0)}2 s(){z a=n("J");6 a?1==a:!0}2 t(){6 4.8(\'A[B="7"]:9\').5}2 u(){6 4.8(\'A[B="7"]:9\').W("14-N")}2 v(a){c.1e("N",a)}2 w(a){b.G=a}2 x(a){a?b.3="1a":b.16("3")}z y,a=4.R(\'A[B="7"]\'),b=4.8("#18-C-19"),c=4.8("#C-12"),d=4.8("#17-C-15"),e=4.R(".C-1b"),f=a[0];P(g(),y=0;y<a.O;y++)a[y].D("Q",o);d.D("Q",q),b.D("1d",r)}();',
+                        62, 77,
+                        "||function|target|document|value|return|type|querySelector|checked||||||||||||||||||||||||||var|input|name|search|addEventListener|window|parentNode|action|localStorage|classList|newWindow|focus|superSearch|current|placeholder|length|for|change|querySelectorAll|setItem|new|open|add|getAttribute|Date|getItem|href|void|preventDefault|text|location|data|blank|removeAttribute|set|super|fm|_blank|group|remove|submit|setAttribute"
+                            .split("|"), 0, {}));
+                </script>
+                <!------------------------------------------搜索框结束---------------------------------->
+            </div>
+            <fieldset class="nya-container">
+                <legend class="nya-title"><i class="fa fa-volume-up"></i> <span>公告</span></legend>
+                <!-- 公告 -->
+                <marquee direction="left" behavior="scroll" scrollamount="4" scrolldelay="0" loop="-1" hspace="10"
+                         vspace="10">
+                    <font>
+                        公告📄:欢迎访问本站，如果你有什么好的想法或者建议可以提交给我们，请安全、合法地使用导航，请勿浏览有关于政治、暴力、色情等国家明令禁止的信息！
+                    </font>
+                </marquee>
+                <center>
+                    <a style="text-decoration: none;font-size:16px;font-weight: bolder; " id="jnkc" rel="nofollow"
+                       class="page_speeder_1602774156" href="http://wannianli.tianqi.com/" target="_blank"
+                       rel="nofollow">2018/8/8 下午7:08:40 星期六</a>
+                </center>
+                <script>
+                    setInterval("jnkc.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());", 1000);
+                </script>
+                <br>
+                <center>
+                    <div class="tq">
+                        <!--<iframe allowtransparency="true" frameborder="0" width="317" height="28" scrolling="no"-->
+                        <!--    src="//tianqi.2345.com/plugin/widget/index.htm?s=3&z=1&t=1&v=0&d=1&bd=0&k=&f=&ltf=009944&htf=cc0000&q=1&e=1&a=1&c=54511&w=317&h=28&align=center"></iframe>-->
+                        <!--<iframe width="300" height="30" frameborder="0" scrolling="no" hspace="0" src="https://i.tianqi.com/?c=code&a=getcode&id=34&icon=1"></iframe>-->
+                        <div id="tp-weather-widget"></div>
+                        <script>
+                            (function (a, h, g, f, e, d, c, b) {
+                                b = function () {
+                                    d = h.createElement(g);
+                                    c = h.getElementsByTagName(g)[0];
+                                    d.src = e;
+                                    d.charset = "utf-8";
+                                    d.async = 1;
+                                    c.parentNode.insertBefore(d, c)
+                                };
+                                a["SeniverseWeatherWidgetObject"] = f;
+                                a[f] || (a[f] = function () {
+                                    (a[f].q = a[f].q || []).push(arguments)
+                                });
+                                a[f].l = +new Date();
+                                if (a.attachEvent) {
+                                    a.attachEvent("onload", b)
+                                } else {
+                                    a.addEventListener("load", b, false)
+                                }
+                            }(window, document, "script", "SeniverseWeatherWidget", "//cdn.sencdn.com/widget2/static/js/bundle.js?t=" + parseInt((new Date().getTime() / 100000000).toString(), 10)));
+                            window.SeniverseWeatherWidget('show', {
+                                flavor: "slim",
+                                location: "WX4FBXXFKE4F",
+                                geolocation: true,
+                                language: "auto",
+                                unit: "c",
+                                theme: "auto",
+                                token: "a97df7d9-78d4-4b31-88a5-561a4bb33d9b",
+                                hover: "enabled",
+                                container: "tp-weather-widget"
+                            })
+                        </script>
+                    </div>
+                </center>
+
+                <style type="text/css">
+                    .wrapper {
+                        position: relative;
+                    }
+
+                    #input {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        z-index: -10;
+                    }
+                </style>
+
+                <div class="wrapper" align="center">
+                    <!--<h3>支付宝12.12大额红包活动开始啦！<font color="red">是无门槛红包哦！</font></h3>-->
+                    <h5>打开支付宝，在搜索框输入<font color="red">
+                        <p id="text">707973495</p>
+                    </font>即可直接领取现金红包
+                    </h5>
+                    <textarea id="input"></textarea>
+                    <button onclick="copyText()">复制口令</button>
+
+                    <!-- <br><br>-->
+                    <!--<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>-->
+                    <!--<script type="text/javascript">-->
+                    <!--document.write('<b>'+'您的IP:'+returnCitySN["cip"]+' 您的位置:'+returnCitySN["cname"]+'</b>')-->
+                    <!--</script>-->
+                    <p align="center">
+                        <font color="red">推广合作: </font>推荐一个 IPLC 机场,节点全部解锁流媒体,经过三个月的使用和测试,晚高
+                        <br> 峰 4K 非常稳定.如果你有需求同时愿意支持本站,也可以通过我的 <a
+                            href="https://ssrdog111.com/#/register?code=4ksQSpv2" target="_blank">推广链接</a> 购买.
+                        <br>我要白嫖？点击<a href="https://ikuuu.dev/auth/register?code=y3zu" target="_blank">这里</a>
+                        <br>
+                        <font color="red">特别鸣谢: </font>感谢所有 <a
+                            href="https://huangetech.gitee.io/pay/index2.html" target="_blank">打赏</a>
+                        过的用户,你们的支持将会给本站提供更稳定的服务
+                    </p>
+                    <br>
+                    <a href="https://mc.quickso.cn/"><img
+                            src="https://jsdelivr.quickso.cn/gh/muzihuaner/huancdn@main/quick-mc-server.gif" alt=""></a>
+                    <br><br>
+                    <a href="https://url.cn/KtBW1uGN">【腾讯云】云服务器等爆品抢先购，低至4.2元/月</a>
+                    <br><br>
+                    <a href="https://jq.qq.com/?_wv=1027&k=aEwg5BVS">点击链接加入群聊【欢哥の小屋①】</a>
+
+                    <a href="https://jq.qq.com/?_wv=1027&k=UMBjM61Q">点击链接加入群聊【欢哥の小屋②】</a>
+                    <br><br>
+                    <a href="https://t.me/huangetech">官方TG群:<b>https://t.me/huangetech</b></a>
+                </div>
+                <script type="text/javascript">
+                    function copyText() {
+                        var text = document.getElementById("text").innerText;
+                        var input = document.getElementById("input");
+                        input.value = text; // 修改文本框的内容
+                        input.select(); // 选中文本
+                        document.execCommand("copy"); // 执行浏览器复制命令
+                        alert("复制成功");
+                    }
+                </script>
+
+            </fieldset>
+
+            <fieldset class="nya-container" id="phonehide">
+                <legend class="nya-title">
+                    <i class="fa fa-lightbulb-o"></i>
+                    <span>Do It Better</span>
+                </legend>
+
+
+                <div class="aside aside-count">
+                    <div class="p-3">人生倒计时</div>
+                    <div class="content">
+                        <div class="item" id="dayProgress">
+                            <div class="title">今日已经过去<span></span>小时</div>
+                            <div class="progress">
+                                <div class="progress-bar">
+                                    <div class="progress-inner progress-inner-1"></div>
+                                </div>
+                                <div class="progress-percentage"></div>
+                            </div>
+                        </div>
+                        <div class="item" id="weekProgress">
+                            <div class="title">这周已经过去<span></span>天</div>
+                            <div class="progress">
+                                <div class="progress-bar">
+                                    <div class="progress-inner progress-inner-2"></div>
+                                </div>
+                                <div class="progress-percentage"></div>
+                            </div>
+                        </div>
+                        <div class="item" id="monthProgress">
+                            <div class="title">本月已经过去<span></span>天</div>
+                            <div class="progress">
+                                <div class="progress-bar">
+                                    <div class="progress-inner progress-inner-3"></div>
+                                </div>
+                                <div class="progress-percentage"></div>
+                            </div>
+                        </div>
+                        <div class="item" id="yearProgress">
+                            <div class="title">今年已经过去<span></span>个月</div>
+                            <div class="progress">
+                                <div class="progress-bar">
+                                    <div class="progress-inner progress-inner-4"></div>
+                                </div>
+                                <div class="progress-percentage"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .aside {
+                        background-color: #fff;
+                        border-radius: 5px;
+                        box-shadow: 0 3px 10px -5px rgb(0 0 0 / 30%);
+                        padding: 20px;
+                    }
+
+                    .p-3 {
+                        display: block;
+                        font-size: 1.5em;
+                        margin-block-start: 0.83em;
+                        margin-block-end: 0.83em;
+                        margin-inline-start: 0px;
+                        margin-inline-end: 0px;
+                        font-weight: bold;
+                    }
+
+                    .aside-count .content {
+                        padding: 15px
+                    }
+
+                    .aside-count .content .item {
+                        margin-bottom: 15px
+                    }
+
+                    .aside-count .content .item:last-child {
+                        margin-bottom: 0
+                    }
+
+                    .aside-count .content .item .title {
+                        font-size: 12px;
+                        color: var(--minor);
+                        margin-bottom: 5px;
+                        display: flex;
+                        align-items: center
+                    }
+
+                    .aside-count .content .item .title span {
+                        color: var(--theme);
+                        font-weight: 500;
+                        font-size: 14px;
+                        margin: 0 5px
+                    }
+
+                    .aside-count .content .item .progress {
+                        display: flex;
+                        align-items: center
+                    }
+
+                    .aside-count .content .item .progress .progress-bar {
+                        height: 10px;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        background: var(--classC);
+                        width: 0;
+                        min-width: 0;
+                        flex: 1;
+                        margin-right: 5px
+                    }
+
+                    @keyframes progress {
+                        0% {
+                            background-position: 0 0
+                        }
+
+                        100% {
+                            background-position: 30px 0
+                        }
+                    }
+
+                    .aside-count .content .item .progress .progress-bar .progress-inner {
+                        width: 0;
+                        height: 100%;
+                        border-radius: 5px;
+                        transition: width 0.35s;
+                        -webkit-animation: progress 750ms linear infinite;
+                        animation: progress 750ms linear infinite
+                    }
+
+                    .aside-count .content .item .progress .progress-bar .progress-inner-1 {
+                        background: #bde6ff;
+                        background-image: linear-gradient(135deg, #50bfff 25%, transparent 25%, transparent 50%, #50bfff 50%, #50bfff 75%, transparent 75%, transparent 100%);
+                        background-size: 30px 30px
+                    }
+
+                    .aside-count .content .item .progress .progress-bar .progress-inner-2 {
+                        background: #ffd980;
+                        background-image: linear-gradient(135deg, #f7ba2a 25%, transparent 25%, transparent 50%, #f7ba2a 50%, #f7ba2a 75%, transparent 75%, transparent 100%);
+                        background-size: 30px 30px
+                    }
+
+                    .aside-count .content .item .progress .progress-bar .progress-inner-3 {
+                        background: #ffa9a9;
+                        background-image: linear-gradient(135deg, #ff4949 25%, transparent 25%, transparent 50%, #ff4949 50%, #ff4949 75%, transparent 75%, transparent 100%);
+                        background-size: 30px 30px
+                    }
+
+                    .aside-count .content .item .progress .progress-bar .progress-inner-4 {
+                        background: #67c23a;
+                        background-image: linear-gradient(135deg, #4f9e28 25%, transparent 25%, transparent 50%, #4f9e28 50%, #4f9e28 75%, transparent 75%, transparent 100%);
+                        background-size: 30px 30px
+                    }
+                </style>
+                <script src="{% static 'js/lifetimescript.js'%}"></script>
+                <!--<a href="https://www.cnblogs.com/HGNET/p/16025677.html" target="_blank" class="media-content" style="background-image: url('https://vkceyugu.cdn.bspapp.com/VKCEYUGU-01268cbe-6fc7-42b2-a181-bdcb084444ee/3ee3e0e7-6bb3-4471-9b84-13266b595877.png');"></a>-->
+            </fieldset>
+            </fieldset>
+
+            <!--<fieldset class="nya-container" id="phonehide">-->
+            <!--       <legend class="nya-title">-->
+            <!--           <i class="fa fa-lightbulb-o"></i>-->
+            <!--           <span>节日</span>-->
+            <!--       </legend>-->
+
+            <!--       <a href="https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&tn=baidu&wd=%E4%BA%94%E5%9B%9B%E9%9D%92%E5%B9%B4%E8%8A%82&oq=%25E4%25B8%25AD%25E5%259B%25BD&rsv_pq=fa150dec00004916&rsv_t=d0f6AuMhZXuTEpfhBh%2Bcjhas7lb5teAuZ%2BMTWyRC6Dk6NoHa5LcsyBONIpA&rqlang=cn&rsv_enter=1&rsv_dl=ts_1&rsv_btype=t&inputT=3774&rsv_sug3=19&rsv_sug1=14&rsv_sug7=101&rsv_sug2=1&prefixsug=%25E4%25BA%2594%25E5%259B%259B&rsp=1&rsv_sug4=4295" target="_blank" class="media-content" style="background-image: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic3.zhimg.com%2Fv2-5bb993bae2b6d028d3ccdab1fc97e512_1200x500.jpg&refer=http%3A%2F%2Fpic3.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1654211967&t=4050c57bdbe702d131791ab058c37d7e');"></a>-->
+            <!--   </fieldset>-->
+            <style>
+                .media-content {
+                    height: 383px;
+                    /*position: absolute;*/
+                    /*top: 0;*/
+                    /*bottom: 0;*/
+                    /*left: 0;*/
+                    /*right: 0;*/
+                    border: 0;
+                    border-radius: inherit;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    background-color: rgba(120, 120, 120, .1);
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    -webkit-justify-content: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    -webkit-align-items: center;
+                    align-items: center;
+                }
+            </style>
+            <!-------------------------------------列表开始------------------------------------------------------->
+            <fieldset class="nya-container" align="center">
+                <legend class="nya-title" align="left">
+                    <i class="fa fa-adjust" aria-hidden="true"/></i>
+                    <span>Chatgpt专区</span>
+                    <a></a>
+                </legend>
+
+                <a rel="nofollow" href="https://chat.openai.com/" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">Chatgpt官方</a>
+                <a rel="nofollow" href="https://yiyan.baidu.com/" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">文心一言</a>
+                <a rel="nofollow" href="https://moss.fastnlp.top/" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">Moss</a>
+                <a rel="nofollow" href="https://freegpt.one/" target="_self" rel="noopener noreferrer"
+                   class="nya-btn hot badge">镜像站0(推荐)</a>
+                <a rel="nofollow" href="https://chatgpt.ddiu.me/" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">镜像站1</a>
+                <a rel="nofollow" href="https://chat.zecoba.cn/" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">镜像站2</a>
+                <a rel="nofollow" href="https://freegpt.cc/" target="_self" rel="noopener noreferrer" class="nya-btn">镜像站3</a>
+                <a rel="nofollow" href="https://chat.ninvfeng.xyz/" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">镜像站4</a>
+                <a rel="nofollow" href="https://chat.alpaca-bi.com" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">镜像站5</a>
+                <a rel="nofollow" href="https://chat.tgbot.co/" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">镜像站6</a>
+                <a rel="nofollow" href="https://chat.paoying.net/" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">镜像站7</a>
+                <a rel="nofollow" href="https://fastgpt.app/" target="_self" rel="noopener noreferrer" class="nya-btn">镜像站8</a>
+
+                <a rel="nofollow" href="https://chatgpt.quickso.cn/" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">镜像站(备用)</a>
+                <a rel="nofollow" href="https://mp.weixin.qq.com/s/RG4QggrmBT2BCq-iARN5-Q" target="_self"
+                   rel="noopener noreferrer" class="nya-btn">国内镜像合集</a>
+                <a rel="nofollow" href="https://github.com/search?q=chatgpt" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">相关项目</a>
+                <a rel="nofollow" href="https://github.com/lencx/ChatGPT" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">桌面应用</a>
+                <a rel="nofollow" href="https://sspai.com/post/78399" target="_self" rel="noopener noreferrer"
+                   class="nya-btn hot badge">资源盘点</a>
+
+
+            </fieldset>
+            <fieldset class="nya-container" align="center">
+                <legend class="nya-title" align="left"><i class="fa fa-bolt" aria-hidden="true"></i>
+                    <span>快捷导航</span>
+                    <a></a>
+                </legend>
+                <a rel="nofollow" href="#howtouse" target="_self" rel="noopener noreferrer" class="nya-btn hot badge">使用说明</a>
+                <a rel="nofollow" href="#sousuo" target="_self" rel="noopener noreferrer" class="nya-btn">搜索引擎</a>
+                <a rel="nofollow" href="#bbs" target="_self" rel="noopener noreferrer" class="nya-btn">论坛、社交</a>
+                <a rel="nofollow" href="#video" target="_self" rel="noopener noreferrer" class="nya-btn">影视</a>
+                <a rel="nofollow" href="#music" target="_self" rel="noopener noreferrer" class="nya-btn">音乐</a>
+                <a rel="nofollow" href="#read" target="_self" rel="noopener noreferrer" class="nya-btn">阅读</a>
+                <a rel="nofollow" href="#news" target="_self" rel="noopener noreferrer" class="nya-btn">新闻资讯</a>
+                <a rel="nofollow" href="#qaq" target="_self" rel="noopener noreferrer" class="nya-btn">二次元、动漫</a>
+                <a rel="nofollow" href="#soft" target="_self" rel="noopener noreferrer" class="nya-btn">软件资源</a>
+                <a rel="nofollow" href="#system" target="_self" rel="noopener noreferrer" class="nya-btn">系统镜像</a>
+                <a rel="nofollow" href="#pcmustinstall" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">装机必备</a>
+                <a rel="nofollow" href="#pan" target="_self" rel="noopener noreferrer" class="nya-btn">网盘</a>
+                <a rel="nofollow" href="#panso" target="_self" rel="noopener noreferrer" class="nya-btn">网盘搜索</a>
+                <a rel="nofollow" href="#yunpan" target="_self" rel="noopener noreferrer" class="nya-btn">世纪互联、个人网盘、谷歌网盘资源</a>
+                <a rel="nofollow" href="#tools" target="_self" rel="noopener noreferrer" class="nya-btn">在线工具</a>
+                <a rel="nofollow" href="#fanyi" target="_self" rel="noopener noreferrer" class="nya-btn">翻译</a>
+                <a rel="nofollow" href="#email" target="_self" rel="noopener noreferrer" class="nya-btn">邮箱</a>
+                <a rel="nofollow" href="#map" target="_self" rel="noopener noreferrer" class="nya-btn">地图</a>
+                <a rel="nofollow" href="#shop" target="_self" rel="noopener noreferrer" class="nya-btn">购物、快递</a>
+                <a rel="nofollow" href="#game" target="_self" rel="noopener noreferrer" class="nya-btn">游戏</a>
+                <a rel="nofollow" href="#design" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">设计、视觉、图片、视频素材</a>
+                <a rel="nofollow" href="#fun" target="_self" rel="noopener noreferrer" class="nya-btn">有趣、新奇</a>
+                <a rel="nofollow" href="#study" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">学习、学术、教程、涨知识、论文</a>
+                <a rel="nofollow" href="#school" target="_self" rel="noopener noreferrer" class="nya-btn">大学、学院</a>
+                <a rel="nofollow" href="#digital" target="_self" rel="noopener noreferrer" class="nya-btn">手机、数码</a>
+                <a rel="nofollow" href="#car" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">体育、军事、汽车</a>
+                <a rel="nofollow" href="#navandhome" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">网址导航、主页</a>
+                <a rel="nofollow" href="#coding" target="_self" rel="noopener noreferrer" class="nya-btn">开发者</a>
+                <a rel="nofollow" href="#zmt" target="_self" rel="noopener noreferrer" class="nya-btn">自媒体、办公</a>
+                <a rel="nofollow" href="#acitvity" target="_self" rel="noopener noreferrer" class="nya-btn">广告</a>
+                <a rel="nofollow" href="#links" target="_self" rel="noopener noreferrer" class="nya-btn">友情链接</a>
+                <a rel="nofollow" href="#mysky" target="_self" rel="noopener noreferrer" class="nya-btn">自留地</a>
+                <a rel="nofollow" href="#mine" target="_self" rel="noopener noreferrer" class="nya-btn">我的</a>
+                <a rel="nofollow" href="#zmt" target="_self" rel="noopener noreferrer" class="nya-btn">自媒体、办公</a>
+                <a rel="nofollow" href="#more" target="_self" rel="noopener noreferrer" class="nya-btn">More</a>
+                <a rel="nofollow" href="#followus" target="_self" rel="noopener noreferrer" class="nya-btn">关注我们</a>
+                <a rel="nofollow" href="#supportus" target="_self" rel="noopener noreferrer"
+                   class="nya-btn">支持我们</a>
+            </fieldset>
+
+            <div class="favorites"></div>
+
+            <div class="newlist">
+
+
+                {% for obj1 in CategoryList %}
+<fieldset class="nya-container" align="center">
+    <legend class="nya-title" align="left">
+        <i class="{{obj1.icon}}"></i>
+        <span>{{obj1.name}}</span>
+    </legend>
+    <a name="{{obj1.category}}"></a>
+
+        {% for obj2 in link %}
+        <a target="_blank" rel="nofollow" href='{{obj2.url}}' title="{{obj2.title}}" rel="noopener noreferrer"
+           class="{{obj2.status}}">{{obj2.name}}</a>
+    {% endfor %}
+</fieldset>
+{% endfor %}
+
+            </div>
+
+
+            <!--                <div id="context" class="newlist">-->
+
+            <!--                    &lt;!&ndash;<fieldset class="nya-container">-->
+            <!--                        <legend class="nya-title">-->
+            <!--                            <i class="fa fa-code"></i>-->
+            <!--                            <span>标题</span>-->
+            <!--                        </legend>-->
+            <!--                       副标题<p>-->
+            <!--                        <a title="说明" href="/" target="_blank" rel="noopener noreferrer" class="nya-btn">-->
+            <!--                          网站名称-->
+            <!--                        </a>-->
+            <!--                    </fieldset>&ndash;&gt;-->
+            <!--                </div>-->
+            <br>
+            <br>
+            <br>
+
+            <fieldset class="nya-container" align="center" id="hide">
+                <legend class="nya-title" align="left"><i class="fa fa-user-secret" aria-hidden="true"></i>
+                    <span>Sex</span> <a></a></legend>
+                <a rel="nofollow" href="https://knowsex.net/" target="_blank" rel="noopener noreferrer" class="nya-btn">知性</a>
+                <a rel="nofollow" href="https://jiba.plus/" target="_blank" rel="noopener noreferrer" class="nya-btn">阴茎锻炼手册</a>
+                <a rel="nofollow" href="https://tieba.baidu.com/f?fr=ala0&kw=%BD%E4%C9%AB" target="_blank"
+                   rel="noopener noreferrer" class="nya-btn">戒色吧</a> <a rel="nofollow"
+                                                                           href="https://space.bilibili.com/326081112"
+                                                                           target="_blank" rel="noopener noreferrer"
+                                                                           class="nya-btn">夹性芝士</a> <a
+                    rel="nofollow" href="https://www.mm131.net/" target="_blank" rel="noopener noreferrer"
+                    class="nya-btn hot badge">MM131</a> <a rel="nofollow" href="https://www.mzitu.com/" target="_blank"
+                                                           rel="noopener noreferrer" class="nya-btn">妹子图</a> <a
+                    rel="nofollow" href="https://a7a7.net/meitu/" target="_blank" rel="noopener noreferrer"
+                    class="nya-btn">阿七美图</a> <a rel="nofollow" href="https://lncn.org/" target="_blank"
+                                                    rel="noopener noreferrer" class="nya-btn gfw badge">免费节点1</a> <a
+                    rel="nofollow" href="https://m.ssrtool.us/free_ssr" target="_blank" rel="noopener noreferrer"
+                    class="nya-btn">免费节点2</a> <a rel="nofollow" href="https://3.weiwei.in/2020.html" target="_blank"
+                                                     rel="noopener noreferrer" class="nya-btn">免费节点3</a> <a
+                    rel="nofollow" href="https://merlinblog.xyz/wiki/freess.html" target="_blank"
+                    rel="noopener noreferrer" class="nya-btn">免费节点4</a> <a rel="nofollow"
+                                                                               href="https://githubcn.hgnet.workers.dev/Alvin9999/new-pac/wiki/v2ray%E5%85%8D%E8%B4%B9%E8%B4%A6%E5%8F%B7"
+                                                                               target="_blank" rel="noopener noreferrer"
+                                                                               class="nya-btn">免费节点5</a> <a
+                    rel="nofollow"
+                    href="https://githubcn.hgnet.workers.dev/Alvin9999/new-pac/wiki/ss%E5%85%8D%E8%B4%B9%E8%B4%A6%E5%8F%B7"
+                    target="_blank" rel="noopener noreferrer" class="nya-btn">免费节点6</a> <a rel="nofollow"
+                                                                                               href="https://githubcn.hgnet.workers.dev/freefq/free"
+                                                                                               target="_blank"
+                                                                                               rel="noopener noreferrer"
+                                                                                               class="nya-btn">免费节点7</a>
+                <a rel="nofollow" href="https://ikuuu.co/auth/register?code=3yrg" target="_blank"
+                   rel="noopener noreferrer" class="nya-btn recommend badge">白嫖机场</a> <a rel="nofollow"
+                                                                                             href="https://ssr.hgnet.workers.dev/"
+                                                                                             target="_blank"
+                                                                                             rel="noopener noreferrer"
+                                                                                             class="nya-btn">免费节点（镜像）</a>
+                <a rel="nofollow" href="https://js.zmirror.xyz/" target="_blank" rel="noopener noreferrer"
+                   class="nya-btn gfw badge">免费代理1</a> <a rel="nofollow" href="https://proxy.justyy.com/"
+                                                              target="_blank" rel="noopener noreferrer" class="nya-btn">免费代理2</a>
+                <a rel="nofollow" href="https://js.svvme.com/" target="_blank" rel="noopener noreferrer"
+                <!-- class="nya-btn">免费代理3</a> <a rel="nofollow" href="https://www.pornhub.com/" target="_blank" rel="noopener noreferrer" -->
+                <!--class="nya-btn hot badge">Pornhub</a> <a rel="nofollow" href="https://xvideo.com" target="_blank" rel="noopener noreferrer"-->
+                <!--class="nya-btn hot badge">Xvideo</a> <a rel="nofollow" href="https://maomiav.com/" target="_blank" rel="noopener noreferrer"-->
+                <!--class="nya-btn hot badge">猫咪AV</a> <a rel="nofollow" href="https://04647.xyz" target="_blank" rel="noopener noreferrer"-->
+                <!--class="nya-btn hot badge">04647</a> <a rel="nofollow" href="https://fulione.com/" target="_blank" rel="noopener noreferrer"-->
+                <!--class="nya-btn hot badge">第一福利导航</a> <a rel="nofollow" href="https://theporndude.com/" target="_blank" rel="noopener noreferrer"-->
+                <!--class="nya-btn hot badge">PornDude</a>-->
+            </fieldset>
+
+
+            <!--PC显示，手机不显示-->
+            <style>
+                @media screen and (max-width: 768px) {
+
+                    #phonehide {
+
+                        display: none;
+                    }
+
+                }
+            </style>
+            <fieldset class="nya-container" id="phonehide">
+                <legend class="nya-title"><i class="fa fa-bookmark" aria-hidden="true"></i> <span>超级书签</span> <a
+                        name="superbookmark"></a></legend>
+                <p>
+                    <strong>无需安装任何插件，只需要把下方图标拖拽到你的浏览器书签栏，你的书签栏就会变成一个功能强大的神器！</strong>
+                </p>
+                <table border="1" bordercolor="#000000" cellspacing="1">
+                    <tr>
+
+                        <td>
+                            <h2 style="font-size:20px"><strong>1. 🔓️ 解除 网页限制</strong></h2>
+                            <p><strong>拖动下方书签图标到浏览器上方的书签栏</strong>，点击书签栏的<span
+                                    style="color:#006e9d" class="has-inline-color">【解除网页限制】</span>，即可解锁当前网站的复制限制，右键限制，选择限制等，适用于绝大部分网站。
+                            </p>
+                            <a href="javascript:&quot;use strict&quot;;!function(){var t=function(t){t.stopPropagation(),t.stopImmediatePropagation&amp;&amp;t.stopImmediatePropagation()};[&quot;copy&quot;,&quot;cut&quot;,&quot;contextmenu&quot;,&quot;selectstart&quot;,&quot;mousedown&quot;,&quot;mouseup&quot;,&quot;keydown&quot;,&quot;keypress&quot;,&quot;keyup&quot;].forEach(function(e){document.documentElement.addEventListener(e,t,{capture:!0})}),alert(&quot;解除限制成功啦！&quot;)}();"
+                               class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i> 解除网页限制</a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+                        <td>
+                            <h2 style="font-size:20px"><strong>2. 📑 网页 自由编辑</strong></h2>
+                            <p><strong>拖动下方书签图标到浏览器上方的书签栏</strong>，点击书签栏的<span
+                                    style="color:#006f9f" class="has-inline-color">【网页自由编辑】</span>，当前网页进入可编辑模式，可修改当前网页中的任意内容，再次点击则退出编辑模式。
+                            </p>
+                            <a href="javascript:&quot;use strict&quot;;!function(){&quot;true&quot;===document.body.getAttribute(&quot;contenteditable&quot;)?(document.body.setAttribute(&quot;contenteditable&quot;,!1),alert(&quot;网页不能编辑啦！&quot;)):(document.body.setAttribute(&quot;contenteditable&quot;,!0),alert(&quot;网页可以编辑啦！&quot;))}();"
+                               class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i> 网页自由编辑 </a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+
+                        <td>
+                            <h2 style="font-size:20px"><strong>3. 🛒 商品 历史价格查询</strong></h2>
+                            <p><strong>拖动下方书签图标到浏览器上方的书签栏</strong>，在京东、淘宝、天猫、苏宁等购物网站商品页面，点击书签栏的<span
+                                    style="color:#0274a4">【历史价格查询】</span>，即可跳转到当前商品的历史价格，摸清商品降价规律，以最便宜的价格购买商品！
+                            </p>
+                            <a href="javascript:(function(){window.open(&quot;http://www.hisprice.cn/his.php?hisurl=&quot;+document.location.href)})()"
+                               class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i> 历史价格查询</a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2 style="font-size:20px"><strong>4. 🌗 夜间模式</strong></h2>
+                            <p><strong> 拖动下方书签图标到浏览器上方的书签栏</strong>， 点击书签栏的 <span
+                                    style="color:#0274a4" class="has-inline-color">【夜间模式】</span>
+                                ，即可一键降低浏览器的亮度，用于夜晚浏览网页保护眼睛。再次点击 <span style="color:#0274a4"
+                                                                                                  class="has-inline-color">【夜间模式】</span>
+                                即可恢复正常。</p>
+                            <a href="javascript:(function(){var night=function(w){(function(d){var css='html{opacity:0.7!important;background:black!important;}body{background:white!important;}';var s=d.getElementsByTagName('style');for(var i=0,si;si=s[i];i++){if(si.innerHTML==css){si.parentNode.removeChild(si);return}};var heads=d.getElementsByTagName('head');if(heads.length){var node=d.createElement('style');node.type='text/css';node.appendChild(d.createTextNode(css));heads[0].appendChild(node)}})(w.document); for(var i=0,f;f=w.frames[i];i++){try{arguments.callee(f)}catch(e){}}};night(window)})();"
+                               class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i> 夜间模式 </a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+                        <td>
+                            <h2 style="font-size:20px"><strong>5. ⏸ 网页分屏</strong></h2>
+                            <p><strong>拖动下方书签
+                                图标到浏览器上方的书签栏</strong>，点击书签栏的<span style="color:#006e9d"
+                                                                                    class="has-inline-color">【网页分屏】</span>，输入要分屏显示的网站地址，即可将当前网页与输入的网页在当前显示一同显示。
+                            </p>
+                            <a href="javascript:(function(w,d){var href=location.href;var website=w.prompt('请输入网址','http://')||href;d.write('<HTML><HEAD></HEAD><FRAMESET COLS=\'50%,*\'><FRAME SRC='+location.href+'><FRAME SRC='+website+'></FRAMESET></HTML>');})(window,document)"
+                               class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i> 网页分屏 </a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+                        <td>
+                            <h2 style="font-size:20px"><strong>6. ✒️ 字体查询</strong></h2>
+                            <p><strong>拖动下方书签图标到浏览器上方的书签栏</strong>，点击书签栏的<span
+                                    style="color:#006e9d" class="has-inline-color">【字体查询】</span>，然后选择用鼠标选择网页上的文字，
+                            </p>
+                            <a href="javascript:(function(){if(!document.getElementById('fountscript')){var founts=document.createElement('script');founts.src='https://fount.artequalswork.com/fount.js';founts.id='fountscript';document.body.appendChild(founts);}})();"
+                               class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i> 字体查询</a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2 style="font-size:20px"><strong>7. 📽️ VIP视频解析</strong></h2>
+                            <p><strong>拖动下方书签
+                                图标到浏览器上方的书签栏</strong>，然后打开任意腾讯视频、优酷、爱奇艺、芒果TV等影视平台的VIP视频，点击书签栏的<span
+                                    style="color:#006e9d" class="has-inline-color">【VIP影视解析】</span>书签，即可免费观看VIP视频！
+                            </p>
+                            <a href="javascript:(function(){window.open(&quot;http://v.quickso.cn/?url=&quot;+document.location.href)})()"
+                               class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i> VIP影视解析 </a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+                        <td>
+                            <h2 style="font-size:20px"><strong>8. 🚀万能命令书签️</strong></h2>
+                            <p><strong>拖动下方书签图标到浏览器上方的书签栏</strong>，只需点击一下书签栏里的<span
+                                    style="color:#006e9d" class="has-inline-color">【万能命令书签】</span>，即可马上展示用于该网页的各类工具。
+                                万能命令是一个在线工具快捷跳转平台，将各种高质量的在线工具按应用站点聚合起来，让你以方便快捷好记的方式寻找和使用网页型在线工具！
+                            </p>
+                            <a href="javascript:(function(){window.open(%22https://wn.run/f/#%22+document.location.href)})()"
+                               add_date="194534751575" class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i>
+                                万能命令书签</a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+                        <td>
+                            <h2 style="font-size:20px"><strong>9. 🌏谷歌选词翻译️</strong></h2>
+                            <p><strong>拖动下方书签图标到浏览器上方的书签栏</strong>，用鼠标选中你要翻译的词汇伙句子，只需点击一下书签栏里的<span
+                                    style="color:#006e9d" class="has-inline-color">【谷歌选词翻译】</span>，就可以马上跳转到谷歌翻译进行翻译
+                                ！</p>
+                            <a href="javascript:var%20t=((window.getSelection&amp;&amp;window.getSelection())||(document.getSelection&amp;&amp;document.getSelection())||(document.selection&amp;&amp;document.selection.createRange&amp;&amp;document.selection.createRange().text));var%20e=(document.charset||document.characterSet);if(t!=''){window.open('http://translate.google.cn/?text='+t+'&amp;hl=zh-CN&amp;langpair=auto|zh-CN&amp;tbb=1&amp;ie='+e);}else{window.open('http://translate.google.c
+                               n/translate?u='+encodeURIComponent(location.href)+'&amp;hl=zh-CN&amp;langpair=auto|zh-CN&amp;tbb=1&amp;ie='+e);};"
+                               add_date="194534751575" class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i>
+                                谷歌选词翻译</a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2 style="font-size:20px"><strong>10. 🏁二维码生成️</strong></h2>
+                            <p><strong>拖动下方书签图标到浏览器上方的书签栏</strong>，打开你要生成二维码的页面，点击<span
+                                    style="color:#006e9d" class="has-inline-color">【二维码生成】</span>，就可以生成二维码了，你可以选择保存或复制。
+                            </p>
+                            <a href="javascript:window.open('https://api.qrserver.com/v1/create-qr-code/?size=300x300&amp;data='%20+%20decodeURIComponent(location.href));void(0);"
+                               add_date="194534751575" class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i>
+                                二维码生成</a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+                        <td>
+                            <h2 style="font-size:20px"><strong>11. 🌈给网页换个背景️</strong></h2>
+                            <p><strong>拖动下方书签图标到浏览器上方的书签栏</strong>，打开你要换背景的页面，点击<span
+                                    style="color:#006e9d" class="has-inline-color">【给网页换个背景】</span>，会出现一个小插件，你可以切换不同的背景
+                            </p>
+                            <a href="javascript:(function()%7Bvar%20newscript%3Ddocument.createElement(%27script%27)%3Bnewscript.type%3D%27text/javascript%27%3Bnewscript.async%3Dtrue%3Bnewscript.src%3D%27https://bradjasper.com/subtle-patterns-bookmarklet/static/js/all.js%3Fcb%3D%27%20%2B%20Math.random()%3B(document.getElementsByTagName(%27head%27)%5B0%5D%7C%7Cdocument.getElementsByTagName(%27body%27)%5B0%5D).appendChild(newscript)%3B%7D)()%3B"
+                               add_date="194534751575" class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i>
+                                给网页换个背景</a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+                        <td>
+                            <h2 style="font-size:20px"><strong>1️2.⌨️弹出软键盘</strong></h2>
+                            <p><strong>拖动下方书签图标到浏览器上方的书签栏</strong>，打开你要输入内容的页面，点击<span
+                                    style="color:#006e9d" class="has-inline-color">【弹出软键盘】</span>，右下角会出现一个小键盘，你可以进行输入的操作
+                            </p>
+                            <a href="javascript:(function(){var st;st=document.createElement('script');st.charset='utf-8';st.src='https://mimace.sinaapp.com/tool/soft_keyboard/plugins/soft_keyboard.js';document.body.appendChild(st);})();"
+                               add_date="194534751575" class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i>弹出软键盘</a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2 style="font-size:20px"><strong>13.📏网页标注</strong></h2>
+                            <p><strong>拖动下方书签图标到浏览器上方的书签栏</strong>，打开你要测量网页元素间的距离的页面，点击<span
+                                    style="color:#006e9d" class="has-inline-color">【网页标注】</span>，鼠标放置到任意元素上，按住
+                                alt 或 Option键，可以测量网页元素间的距离。
+                            </p>
+                            <a href='javascript:"use strict";!(function(){fetch("https://unpkg.com/spacingjs").then(async (res) => eval(await res.text()))})();'
+                               class="nya-btn"><i class="fa fa-key" aria-hidden="true"></i>网页标注</a>
+                            <p>👈<strong>把图标拖动到浏览器书签栏</strong></p>
+
+                        </td>
+                        <td><strong>未完待续….</strong></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <!--广告-->
+            <div class="nya-container">
+                <legend class="nya-title"><i class="fa fa-volume-up" aria-hidden="true"></i> <span>广告位</span> <a
+                        name="activity"></a></legend>
+                <div class="adcard">
+                    <script type="text/javascript">
+                        (function () {
+                            window.apsgodup = {
+                                id: "79213",
+                                t: "2",
+                                a: "199",
+                                w: "720",
+                            };
+                        })()
+                    </script>
+                    <script src="//apsgo.com/assets/js/union.js" type="text/javascript"></script>
+                </div>
+            </div>
+
+            <!--使用说明-->
+            <div class="nya-container">
+                <legend class="nya-title"><i class="fa fa-volume-up" aria-hidden="true"></i> <span>使用说明</span> <a
+                        name="howtouse"></a></legend>
+                <!---->
+                <ul class="nya-list">
+                    <li>欢迎访问本站
+                    <li>
+                        <div class="badge-info"><span class="badge hot">热门</span> <span
+                                class="badge new">新上线</span> <span class="badge recommend">推荐</span> <span
+                                class="badge gfw">科学上网</span></div>
+                    <li><b>欢迎将本站收藏到收藏夹，以便以后使用</b>
+                    <li> 本站域名：<a href="https://quickso.cn/" target="_blank" rel="noopener noreferrer">QuickSo.cn</a>
+                    <li> 备用域名：<a href="https://www.quickso.cn/" target="_blank" rel="noopener noreferrer">www.quickso.cn</a>
+                        <!---->
+                </ul>
+            </div>
+            <fieldset class="nya-container">
+                <legend class="nya-title"><i class="fa fa-heart" aria-hidden="true"></i> <span>关注我们</span> <a
+                        name="followus"></a></legend>
+                <table border="0" bordercolor="#000000" cellspacing="1" id="imgs">
+                    <tr>
+                        <td align="center">
+                            <p>微信公众号</p>
+                            <p><img alt="感谢支持！"
+                                    src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/20210520145355.webp"
+                                    width="100" height="100"/></p>
+                        </td>
+                        <td align="center">
+                            <p>微博</p>
+                            <p><img alt="感谢支持！"
+                                    src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/20210520145411.webp"
+                                    width="100" height="100"/></p>
+                        </td>
+                        <td align="center">
+                            <p>抖音</p>
+                            <p><img alt="感谢支持！"
+                                    src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/20210520145426.webp"
+                                    width="100" height="100"/></p>
+                        </td>
+                    <tr>
+                        <td align="center">
+                            <p>酷安</p>
+                            <p><img alt="感谢支持！"
+                                    src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/20210520145450.webp"
+                                    width="100" height="100"/></p>
+                        </td>
+                        <td align="center">
+                            <p>Bilibili</p>
+                            <p><img alt="感谢支持！"
+                                    src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/20210520145507.webp"
+                                    width="100" height="100"/></p>
+                        </td>
+                        <td align="center">
+                            <p>微信小商店</p>
+                            <p><img alt="感谢支持！"
+                                    src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/20210520145520.webp"
+                                    width="100" height="100"/></p>
+                        </td>
+                </table>
+            </fieldset>
+            <!--打赏-->
+            <fieldset class="nya-container">
+                <legend class="nya-title"><i class="fa fa-credit-card" aria-hidden="true"></i> <span>Buy Me A
+                            Coffee</span> <a name="supportus"></a></legend>
+                <p>亲爱的用户，您好！如果您喜欢这个网站，欢迎赞助我们，您的支持是我们最大的动力。<br>
+                    赞赏款将用于服务器、域名等网站固定支出。感谢大家的支持，谢谢！<a
+                            href="https://github.com/muzihuaner/sponsors"><b>赞赏名单（Github）</b></a></p>
+                <table border="0" bordercolor="#000000" cellspacing="1" id="imgs">
+                    <tr>
+                        <td align="center">
+                            <p>QQ</p>
+                            <p><img alt="感谢支持！"
+                                    src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/20210520145839.webp"
+                                    width="100" height="100"/></p>
+                        </td>
+                        <td align="center">
+                            <p>微信</p>
+                            <p><img alt="感谢支持！"
+                                    src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/20210520145825.webp"
+                                    width="100" height="100"/></p>
+                        </td>
+                        <td align="center">
+                            <p>支付宝</p>
+                            <p><img alt="感谢支持！"
+                                    src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/20210520145811.webp"
+                                    width="100" height="100"/></p>
+                        </td>
+                    <tr>
+                </table>
+            </fieldset>
+        </div>
+    </main>
+</div>
+
+<!-----------------------------网站底部----------------------------------->
+<div class="footer" align="center">
+    <!--<iframe width="350px" height="30px" frameborder="0" scrolling="no" hspace="0" src="location.html"></iframe>-->
+    <div align="center">
+        <br/>
+        <font class="medium">获得本站最佳效果，请使用<a href="https://www.google.com/chrome/" target="_blank"><img
+                class="img-browser" src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn@main/img/icon/chrome.svg"
+                alt="下载 Google Chrome" title="下载 Google Chrome"/></a>或者<a
+                href="https://www.mozilla.org/en-US/firefox/new/" target="_blank"><img class="img-browser"
+                                                                                       src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn@main/img/icon/firefox.svg"
+                                                                                       alt="Firefox"
+                                                                                       title="下载 Firefox" border="0"/></a>且使用大于1024*768的分辨率。</font>
+    </div>
+    <style>
+        .medium {
+            font-size: 9pt;
+        }
+
+        img.img-browser {
+            height: 14px;
+            vertical-align: text-bottom;
+            margin: 0 4px;
+        }
+    </style>
+    <br>
+
+    <!--统计运行天数-->
+    <span id="span"></span>
+    <script type="text/javascript">
+        function runtime() {
+            // 初始时间，日/月/年 时:分:秒
+            X = new Date("06/01/2020 0:0:00");
+            Y = new Date();
+            T = (Y.getTime() - X.getTime());
+            M = 24 * 60 * 60 * 1000;
+            a = T / M;
+            A = Math.floor(a);
+            b = (a - A) * 24;
+            B = Math.floor(b);
+            c = (b - B) * 60;
+            C = Math.floor((b - B) * 60);
+            D = Math.floor((c - C) * 60);
+            //信息写入到DIV中
+            span.innerHTML = "本站勉强运行: " + A + "天" + B + "小时" + C + "分" + D + "秒"
+        }
+
+        setInterval(runtime, 1000);
+    </script>
+    <br>
+
+    <br>
+    <a href="https://docs.qq.com/doc/DV0lSQlh0aXViaVNs?pub=1&dver=2.1.0" style="color: #263238;">使用快点搜之前必读</a>
+    | <a href="https://support.qq.com/products/114435/team/" style="color: #263238;">关于快点搜</a> | <a
+        href="https://support.qq.com/products/114435/faqs-more?" style="color: #263238;">常见问题</a> | <a
+        href="https://support.qq.com/products/114435?" style="color: #263238;">意见反馈</a> |<a href="core"
+                                                                                                style="color: #263238;">浏览器内核检测</a>
+    <br>
+    <br>
+
+    <!--<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img-->
+    <!--        src="data:image/png;base64,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"-->
+    <!--         height="20"></a><br><br>-->
+    <a href="https://www.aliyun.com/minisite/goods?userCode=qic8yjsf" target="blank"
+       title="本网站由阿里云提供云计算服务"><img alt="aliyun"
+                                                 src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/20210824142749.svg"
+                                                 width="100"> <br>
+        <br>
+        <a href="https://curl.qcloud.com/gK7bQU1q" target="blank" title="本网站由腾讯云提供云计算服务"><img alt="aliyun"
+                                                                                                            src="https://cloudcache.tencentcs.com/qcloud/portal/kit/images/slice/logo.23996906.svg"
+                                                                                                            width="100">
+            <br>
+            <!--<a href="https://www.dogecloud.com/?iuid=2775" target="blank" title="感谢Dogecloud提供CDN加速服务！"><img alt="dogecloud"-->
+            <!--        src="https://console.dogecloud.com/images/logo_colored.png" width="100px"> -->
+
+            <a href="https://www.cloudflare.com/zh-cn/" target="blank" title="感谢cloudflare提供CDN加速服务！"><img
+                    alt="cloudflare" src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn@main/img/cloudflare.svg"
+                    width="100"> <br>
+
+                <a href="https://www.jsdelivr.com/" target="blank" title="感谢jsDelivr提供CDN加速服务！"><img
+                        alt="jsdelivr" src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn@main/img/jsdelivr.svg"
+                        width="100"> </a>
+                <br><br>
+                <center>
+                    <a title="51la网站统计" href="https://invite.51.la/1NZywW12q?target=V6" style="opacity: 1;"><img
+                            src="https://sdk.51.la/icon/4-1.png" style="height: 12px;"></a>
+                    <!--<img src="https://ssl.quickso.cn/ipcard/" alt="" width="428" height="250" /> </center>-->
+                    <br><br><b>本站已支持</b><br>
+                    <!--谷歌翻译插件
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'zh-CN'
+                }, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript"
+            src="https://translate.google.cn/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <br>-->
+                    <!-- IPv6-test.com button BEGIN -->
+                    <a href='http://ipv6-test.com/validate.php?url=quickso.cn'>
+                        <h3>IPV6</h3>
+                    </a>
+                    <!-- IPv6-test.com button END -->
+                    <img src="https://count.getloli.com/get/@:quickso" alt=":name"/>
+                    <br> <br>
+                    <!--无障碍-->
+                    <div><img src="{% static 'imgs/32aria.webp' %}" height="32px" id='assist-open'></div>
+                    <script type="text/javascript"
+                            src="https://muzihuaner.gitee.io/assist/dist/assist-entry.js"></script>
+                    <br>
+                    <a href="https://www.gov.cn/" target="blank" title="这是一个来自中国的站点"><img
+                            src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn/img/202207290744733.svg"
+                            style="width:60px;"/></a>
+                    <br>
+                    <a href="https://icp.gov.moe/?keyword=20210349" target="_blank">萌ICP备-20210349号</a><br>
+                    <br>
+                    <a href="http://beian.miit.gov.cn" target="_blank">晋ICP备2021004715号-2</a> <br>
+                    <br>
+                    <!--版权-->
+
+                    <script type="text/javascript">
+                        copyright = new Date(); //取得当前的日期
+                        update = copyright.getFullYear(); //取得当前的年份
+                        document.write("Copyright © 2016-" + update + ' <a href="https://huangetech.github.io/" title="按下“Ctrl+D”试试？"><b>欢哥科技</b></a> All rights reserved. ');
+                    </script>
+
+                    <br>
+                    <br>
+</div>
+<!--回到顶部-->
+<div style="overflow: hidden;position: fixed;left: 10px;bottom: 20px;z-index: 10;">
+    <div style="overflow: hidden;">
+        <div style="padding-right:50px;"><a href="#supportus" class="btns" style=" text-decoration: none;"
+                                            title="跳转底部"> <i class="fa fa-chevron-down" aria-hidden="true"></i> </a>
+        </div>
+        <div style="padding-top:20px;padding-lift:50px;"><a onClick="darkbutton()" class="btns"
+                                                            style=" text-decoration: none;" title="开/关灯"><i
+                class="fa fa-moon-o" aria-hidden="true"></i> </a>
+        </div>
+        <div style="padding-top:20px;padding-lift:50px;"><a onClick="Wopen()" class="btns"
+                                                            style=" text-decoration: none;" title="优惠券"><i
+                class="fa fa-money" aria-hidden="true"></i></a>
+        </div>
+        <div style="padding-top:20px;padding-lift:50px;"><a class="btns" style=" text-decoration: none;"
+                                                            title="无障碍服务"><i class="fa fa-wheelchair"
+                                                                                  aria-hidden="true"
+                                                                                  id='assist-open'></i></a>
+        </div>
+        <div style="padding-top:20px;padding-right:50px;padding-bottom:50px"><a href="#maintitle" style="float: left;"
+                                                                                class="btns"
+                                                                                style=" text-decoration: none;"
+                                                                                title="返回顶部"> <i
+                class="fa fa-chevron-up" aria-hidden="true"></i> </a></div>
+    </div>
+    <script src="https://gcore.jsdelivr.net/mark.js/7.0.0/jquery.mark.min.js"></script>
+    <script type="text/javascript">
+        function Wopen() {
+            window.open('https://yhq.quickso.cn', '_blank')
+        }
+    </script>
+
+    <!--加载数据-->
+    <script>
+        $(function () {
+            $.ajax({
+
+                function() {
+                    var str = '';
+
+                    $.each(data, function (i, n) {
+                        for (k in n) {
+                            str += '<fieldset class="nya-container" align="center"><legend class="nya-title" align="left">';
+                            str += '<i class="' + n[k].icon + '"></i>';
+                            str += '<span>' + n[k].category + '</span></legend>'
+                            str += '<a name=' + n[k].id + '></a>'
+                            for (j in n[k].sites) {
+                                str += '<a target="_blank" rel="nofollow" href=' + n[k].sites[j].url + ' title="' + n[k].sites[j].title + '" rel="noopener noreferrer"  class="' + n[k].sites[j].mark + '">' + n[k].sites[j].name + '</a> '
+                            }
+                            str += "</fieldset>";
+                        }
+                    });
+
+
+                    $(".newlist").append(str);
+                }
+            });
+        });
+    </script>
+
+    <!--通知-->
+    <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
+    <script src="//jsdelivr.quickso.cn/npm/sweetalert2@11"></script>
+    <script>
+        //   swal({
+        //     title: '更新日志-欢迎使用快点搜！',
+        //     text: "欢哥IP查询上线啦！快速查IP位置~"
+        //     type: 'success',
+        //     confirmButtonText: '好的!'
+        //   })
+        Swal.fire({
+            title: '碎碎念-欢迎使用快点搜！',
+            text: '快点学术搜索上线啦！快拿去水论文吧！',
+            imageUrl: 'https://api.vvhan.com/api/ipCard?tip=Hi%20%E6%AC%A2%E8%BF%8E%E4%BD%BF%E7%94%A8%E5%BF%AB%E7%82%B9%E6%90%9C%EF%BC%81',
+            imageWidth: 428,
+            imageHeight: 250,
+            imageAlt: 'IP卡片',
+            animation: false,
+            footer: '有更好的网站&想法？<a href=https://support.qq.com/products/114435>提交给我们</a> '
+        })
+    </script>
+
+    <!-- 夜间模式js
+        <script>
+            function darkbutton() {
+                var element = document.body;
+                element.classList.toggle("dark");
+            }
+        </script>-->
+    <!-- 夜间模式自动切换-->
+    <script type="text/javascript">
+        function darkbutton() {
+            var dark = document.cookie.replace(/(?:(?:^|.*;\s*)dark\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+            if (dark == '0') {
+                document.body.classList.add('dark');
+                document.cookie = "dark=1;path=/"
+                console.log('夜间模式开启');
+            } else {
+                document.body.classList.remove('dark');
+                document.cookie = "dark=0;path=/"
+                console.log('夜间模式关闭');
+            }
+        }
+
+        (function () {
+            if (document.cookie.replace(/(?:(?:^|.*;\s*)dark\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
+                if (new Date().getHours() > 22 || new Date().getHours() < 5) {
+                    document.body.classList.add('dark');
+                    document.cookie = "dark=1;path=/";
+                    console.log('夜间模式自动开启');
+                } else {
+                    document.body.classList.remove('dark');
+                    document.cookie = "dark=0;path=/";
+                    console.log('夜间模式自动关闭');
+                }
+            } else {
+                var dark = document.cookie.replace(/(?:(?:^|.*;\s*)dark\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+                if (dark == '0') {
+                    document.body.classList.remove('dark');
+                } else if (dark == '1') {
+                    document.body.classList.add('dark');
+                }
+            }
+        })();
+    </script>
+    <script>
+        //网页隐藏，网址后面加上 ?lsp 时才会载入
+
+        if ((location.href || '').indexOf('lsp') > -1) {
+            document.getElementById("hide").style.display = "block";
+        }
+
+        // 网页调试，网址后面加上 ?tiaoshi 时才会载入
+
+        if ((location.href || '').indexOf('tiaoshi') > -1) {
+            document.write('<script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"><\/script>');
+            document.write('<script>new VConsole()<\/script>');
+        }
+    </script>
+    <!--看板猫-->
+    <style>
+        /*躲猫猫*/
+        #maomao {
+            position: fixed;
+            bottom: 40px;
+            right: -5px;
+            width: 57px;
+            height: 70px;
+            background-image: url({% static 'imgs/mao.svg' %});
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: background .3s;
+        }
+
+        #maomao:hover {
+            background-position: 60px 50%;
+        }
+    </style>
+    <div id="maomao" onMouseOut="duoMaomao()">
+        <input type="button" onclick="autoPlay()" hidden="true"/>
+    </div>
+
+    <!--<audio id="myaudio" src="https://gcore.jsdelivr.net/gh/muzihuaner/huancdn@main/music/miao.mp3" acontrols="controls" autoplay="autoplay" hidden="true"></audio>-->
+    <!--网页聊天插件 -->
+    <script src="//topurl.cn/chat.js" async="async" fold></script>
+    <!--看板娘
+        <script src="https://gcore.jsdelivr.net/gh/muzihuaner/live2d-widget@0.8.5/autoload.js"></script>
+-->
+    <!--网站统计-->
+    <script type="text/javascript" src="//js.users.51.la/20575759.js"></script>
+
+    <!-- <script type="text/javascript">
+
+            window.onload = function () {
+
+                document.getElementById("show").onclick = function () {
+
+                    document.getElementById("hide").style.display = "block";
+
+                }
+
+            }
+
+        </script> -->
+
+    <!--地址栏变化-->
+    <script>
+        var OriginTitle = document.title;
+        var titleTime;
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) {
+                document.title = '(๐•̆ ·̭ •̆๐)  不在了吗？';
+                clearTimeout(titleTime);
+            } else {
+                document.title = 'ヾ(Ő∀Ő3)ノ你回来啦！';
+                titleTime = setTimeout(function () {
+                    document.title = OriginTitle;
+                }, 2000);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
